@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJ Wedding Website</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lightbox for gallery -->
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+  
+  <!-- Font (Playfair Display, similar to "The Seasons") -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js" defer></script>
+</head>
+<body 
+    class="bg-white text-gray-800 font-serif leading-relaxed"
+    style="background-image: url('images/1.jpg'); background-size: cover; background-position: center; background-attachment: fixed;"
+>
+<!-- Navigation -->
+<nav class="fixed w-full bg-white shadow-sm z-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo / Title -->
+        <a href="#hero" class="text-xl font-bold">
+            <img src="images/logo.jpg" alt="AJ" class="h-10 w-auto">
+        </a>
+  
+        <!-- Hamburger Button (hidden on desktop) -->
+        <button 
+          id="menu-btn" 
+          class="block md:hidden focus:outline-none"
+        >
+          <!-- icon -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" 
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" 
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+  
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6">
+          <li><a href="#story" class="hover:text-amber-700">Love Story</a></li>
+          <li><a href="#entourage" class="hover:text-amber-700">Entourage</a></li>
+          <li><a href="#save-the-date" class="hover:text-amber-700">Date & Venue</a></li>
+          <li><a href="#gallery" class="hover:text-amber-700">Gallery</a></li>
+          <li><a href="#rsvp" class="hover:text-amber-700">RSVP</a></li>
+          <li><a href="#notes" class="hover:text-amber-700">Notes</a></li>
+        </ul>
+      </div>
+  
+      <!-- Mobile Menu (hidden by default) -->
+      <ul id="menu" class="hidden flex-col space-y-4 pb-4 md:hidden bg-cover bg-center text-black"
+          style="background-image: url('images/1.jpg');">
+        <li><a href="#story" class="block hover:text-amber-700">Love Story</a></li>
+        <li><a href="#entourage" class="block hover:text-amber-700">Entourage</a></li>
+        <li><a href="#save-the-date" class="block hover:text-amber-700">Date & Venue</a></li>
+        <li><a href="#gallery" class="block hover:text-amber-700">Gallery</a></li>
+        <li><a href="#rsvp" class="block hover:text-amber-700">RSVP</a></li>
+        <li><a href="#notes" class="block hover:text-amber-700">Notes</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+
+  <!-- Hero / Invitation -->
+  <section 
+    id="hero" 
+    class="h-screen flex flex-col justify-center items-start relative bg-no-repeat bg-center overflow-hidden"
+  >
+
+    <!-- Main background image (fit version) -->
+    <div 
+      class="absolute inset-0 bg-no-repeat bg-center"
+      style="
+        background-image: url('images/bg2.JPEG');
+        background-size: cover;
+        background-position: center 60%;
+      "
+    ></div>
+
+    <!-- Overlay for readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+    <!-- Content (moved slightly up) -->
+    <div class="relative z-10 text-white px-6 md:px-20 text-left md:text-center -translate-y-14 md:-translate-y-17">
+      <h1 
+        class="text-5xl md:text-7xl font-bold mb-2 leading-tight" 
+        style="font-family: 'Cormorant Garamond', serif;"
+      >
+        <span class="block md:inline">ANTHONY</span>
+        <span class="block md:inline">& JAZEE</span>
+      </h1>
+      <p class="italic text-lg md:text-3xl">Two hearts. One promise.</p>
+      <p class="mt-0.5 text-1xl">December 10, 2025</p>
+    </div>
+  </section>
+
+  <!-- Love Story Highlight -->
+ <!-- <section id="story" class="py-16 px-6 bg-white" style="background-color: #e8ddd4;">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-x-20 items-center">
+      <!-- Image 
+      <div>
+        <img src="images/crop1.JPG" alt="Love Story" class="rounded-lg shadow-lg w-full object-cover">
+      </div>
+  
+      <!-- Text Content 
+      <div class="text-gray-800 -mt-20">
+        <h2 class="text-4xl md:text-8xl font-semibold mb-20" style="font-family: 'Playfair Display', serif;">Join Us in Celebration!</h2>
+        <p class="text-lg leading-relaxed">
+          It was a tale straight out of a novel. We went from childhood friends and high school sweethearts to estranged friends and rekindled first loves.
+        </p>
+        <p class="mt-4 text-lg leading-relaxed">
+          Now, we're preparing to enter a new chapter of our love story.
+        </p>
+      </div>
+    </div>
+  </section>-->
+  
+  <!-- Love Story Highlight -->
+  <section id="story" class="py-16 px-6" style="background-color: #e8ddd4;">
+    <div class="max-w-6xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-12 md:gap-x-20 items-center">
+      
+      <!-- Image -->
+      <div class="mb-8 md:mb-0">
+        <img src="images/crop1.JPG" alt="Love Story" class="rounded-lg shadow-lg w-full object-cover">
+      </div>
+  
+      <!-- Text Content -->
+      <div class="text-gray-800">
+        <h2 class="text-4xl sm:text-5xl md:text-8xl font-semibold mb-10" style="font-family: 'Playfair Display', serif;">
+          Join Us in Celebration!
+        </h2>
+        <p class="text-base sm:text-lg leading-relaxed">
+          Insert story here.
+        </p>
+        <p class="mt-4 text-base sm:text-lg leading-relaxed">
+          Now, we're preparing to enter a new chapter of our love story.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- When & Where 
+  <section id="venue" class="py-16 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-4">When & Where</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="font-semibold">Ceremony</h3>
+        <p>Chapel of San Pedro Calungsod</p>
+        <p>December 10, 2025 • 2:00 PM</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">Reception</h3>
+        <p>Vivace OceanPark</p>
+        <p>December 10, 2025 • 5:00 PM</p>
+      </div>
+    </div>
+  </section>-->
+
+  <!-- Entourage Section -->
+  <section 
+    id="entourage"
+    class="min-h-screen flex justify-center items-center py-16 px-6 text-center">
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-md w-full">
+      <!-- Title -->
+      <h1 class="text-4xl md:text-5xl font-bold text-[#4B2E2E]" style="font-family: 'Cormorant Garamond', serif;">
+        Malait <span class="text-[#4B2E2E]">-</span> Rubio
+      </h1>
+      <h2 class="text-4xl italic text-[#4B2E2E] mt-1" style="font-family: 'Brush Script MT', cursive;">Nuptials</h2>
+
+      <!-- Parents -->
+      <div class="mt-6">
+        <div class="flex flex-col md:flex-row justify-between text-sm md:text-base">
+          <div>
+            <p class="font-bold uppercase">Parents of the Groom</p>
+            <p>Engr. Alejandro Malait</p>
+            <p>Mrs. Rosario Malait</p>
+          </div>
+          <div class="mt-4 md:mt-0">
+            <p class="font-bold uppercase">Parents of the Bride</p>
+            <p>Engr. Roy Rubio</p>
+            <p>Mrs. Evelyn Rubio</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Primary Sponsors -->
+      <div class="mt-8">
+        <p class="font-bold uppercase">Primary Sponsors</p>
+        <p class="italic font-semibold">To Stand as Witnesses to our Vows</p>
+
+        <div class="grid grid-cols-2 text-sm mt-4">
+          <div>
+            <p>Engr. Arthur Malait</p>
+            <p>Engr. Al Vincent Malait</p>
+            <p>Capt. Romeo Dignos</p>
+            <p>Mr. Jun Anthony Tutor</p>
+            <p>Mr. Neil Roque Guzman</p>
+            <p>Mr. Dennis Delgado</p>
+            <p>Mr. Teofilo Geagonia</p>
+            <p>Engr. Reginaldo Guzman</p>
+          </div>
+          <div>
+            <p>Mrs. Rosemarie Malait</p>
+            <p>Mrs. Famela Malait</p>
+            <p>Mrs. Uelsita Dignos</p>
+            <p>Atty. Beverly Tutor</p>
+            <p>Mrs. Deeza Guzman</p>
+            <p>Mrs. Carmelita Delgado</p>
+            <p>Mrs. Ronita Geagonia</p>
+            <p>Mrs. Leigh Guzman</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floral Divider -->
+      <div class="my-6">
+        <img src="images/floral-divider.png" alt="divider" class="mx-auto w-16 opacity-70" />
+      </div>
+
+      <!-- Best Man / Maid of Honor -->
+      <div>
+        <p class="italic font-semibold">To Assist us in our Needs</p>
+        <div class="grid grid-cols-2 text-sm mt-2">
+          <div>
+            <p class="font-bold uppercase">Best Man</p>
+            <p>Engr. Aris Vincent Carillo</p>
+          </div>
+          <div>
+            <p class="font-bold uppercase">Matron of Honor</p>
+            <p>Mrs. Karen Rubio-Sanchez</p>
+          </div>
+        </div>
+
+        <!-- Centered Bible Bearer -->
+        <div class="mt-4 text-center">
+          <p class="font-bold uppercase">Maid of Honor</p>
+          <p>Ms. Mica Joy Pasinabo</p>
+        </div>
+      </div>
+
+      <!-- Groomsmen / Bridesmaids -->
+      <div class="mt-6">
+        <p class="italic font-semibold">To Guide us in our Way</p>
+        <div class="grid grid-cols-2 text-sm mt-2">
+          <div>
+            <p class="font-bold uppercase">Groomsmen</p>
+            <p>Engr. Rhail Joshua Beceril</p>
+            <p>Mr. Kevin Godinez</p>
+            <p>Mr. Fritz Gerald Belo</p>
+            <p>Mr. Christian Joseph Obaob</p>
+          </div>
+          <div>
+            <p class="font-bold uppercase">Bridesmaids</p>
+            <p>Ms. Lydessa Payusan</p>
+            <p>Ms. Micah Dimpas</p>
+            <p>Ms. Arabelle Escuadro</p>
+            <p>Ms. Mary Antionette Cababat</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary Sponsors -->
+      <div class="mt-6">
+        <p class="font-bold uppercase">Secondary Sponsors</p>
+
+        <div class="grid grid-cols-2 text-sm mt-2">
+          <div>
+            <p class="italic font-semibold">To Light our Path</p>
+            <p>Mr. Ian Michael Rubio</p>
+            <p>Ms. Alyssa Marie Pantojan</p>
+          </div>
+          <div>
+            <p class="italic font-semibold">To Clothe us as One</p>
+            <p>Mr. Cris Noel Ortizano</p>
+            <p>Mrs. Charmaine Harlee Ortizano</p>
+          </div>
+        </div>
+
+        <!-- Centered Text -->
+        <div class="mt-4 text-center">
+          <p class="italic font-semibold">To Bind us Together in Unity</p>
+          <p>Engr. Jeremy Dave Sanchez</p>
+          <p>Mrs. Karen Rubio-Sanchez</p>
+        </div>
+      </div>
+
+      <!-- Floral Divider -->
+      <div class="my-6">
+        <img src="images/floral-divider.png" alt="divider" class="mx-auto w-16 opacity-70" />
+      </div>
+
+      <!-- Symbol Bearers + Flower Girls + Little Groom/Bride -->
+      <div class="mt-6 text-sm">
+        <p class="italic font-semibold">To Carry our Symbol of Love, Treasure and Faith</p>
+
+        <div class="grid grid-cols-2 mt-4">
+          <div>
+            <p class="font-bold uppercase">Ring Bearer</p>
+            <p>Gian Miguel Malait</p>
+          </div>
+          <div>
+            <p class="font-bold uppercase">Coin Bearer</p>
+            <p>Gian Gabriel Malait</p>
+          </div>
+        </div>
+
+        <!-- Centered Bible Bearer -->
+        <div class="mt-4 text-center">
+          <p class="font-bold uppercase">Bible Bearer</p>
+          <p>Courvine Daile Malait</p>
+        </div>
+
+        <p class="italic font-semibold mt-6">To Shower our Aisle with Flowers</p>
+        <p>Julia Khaleesi Sanchez</p>
+        <p>Catrinette Daere Malait</p>
+        <p>Alessandra Vienne Malait</p>
+        <p>Laice Vittoria Malait</p>
+        <p>Caleigh Dawnelle Malait</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Save the Date -->
+  <section id="save-the-date" class="h-screen flex flex-col justify-center items-center bg-cover relative" style="background-image: url('images/6I3A8420.jpeg'); background-position: center;">
+    <!-- Overlay Text Container -->
+    <div class="absolute top-6 left-1/2 transform -translate-x-1/2 z-10 px-4 text-center whitespace-nowrap">
+      <h2 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-wide uppercase text-white drop-shadow-lg leading-tight" style="font-family: 'Playfair Display', serif;">
+        SAVE <span class="text-xl sm:text-2xl align-center">THE</span> DATE
+      </h2>
+    </div>
+  </section>
+
+  <section 
+    id="venue" 
+    class="py-20 px-6 flex flex-col justify-center items-center bg-gradient-to-b from-white to-brown-50"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
+      <!-- Ceremony Card -->
+      <div class="bg-white rounded-2xl shadow-lg text-center py-10 px-6 backdrop-blur-sm bg-opacity-95">
+        <img src="images/ring.jpg" alt="rings" class="mx-auto mb-2 w-12 h-12" />
+        <h3 
+          class="text-5xl italic mb-6" 
+          style="font-family: 'Brush Script MT', cursive; color: #4B2E2E;"
+        >
+          Ceremony
+        </h3>
+        <h4 class="text-lg font-semibold mb-4" style="font-family: 'Playfair Display', serif;">
+          CHAPEL OF SAN PEDRO CALUNGSOD
+        </h4>
+        <p class="text-gray-700 mb-20">SM Seaside Complex, Church Ave, Cebu City, 6000 Cebu</p>
+        <p class="text-gray-700 mb-6">1:30 PM</p>
+      </div>
+
+      <!-- Reception Card -->
+      <div class="bg-white rounded-2xl shadow-lg text-center py-10 px-6 backdrop-blur-sm bg-opacity-95">
+        <img src="images/party.jpg" alt="glasses" class="mx-auto mb-2 w-12 h-12" />
+        <h3 
+          class="text-5xl italic mb-6" 
+          style="font-family: 'Brush Script MT', cursive; color: #4B2E2E;"
+        >
+          Reception
+        </h3>
+        <h4 class="text-lg font-semibold mb-4" style="font-family: 'Playfair Display', serif;">
+          VIVACE EVENTS CENTER
+        </h4>
+        <p class="text-gray-700 mb-20">
+          SM Seaside Complex, F. Vestil St, Cebu City, 6000 Cebu
+        </p>
+        <p class="text-gray-700 mb-6">5:30 PM</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Countdown Section -->
+  <section id="countdown-section" class="py-16 px-6" style="background-color: #e8ddd4;">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-10" style="font-family: 'Playfair Display', serif; color: #4B2E2E">
+        Days remaining before we say <span class="italic">"I do"</span>
+      </h2>
+  
+    <!-- Countdown Display -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 justify-center text-center">
+        <div class="bg-black text-white rounded-lg py-4 px-3 shadow-md w-24 sm:w-28 mx-auto">
+          <div id="days" class="text-3xl sm:text-4xl font-bold">000</div>
+          <div class="mt-1 text-xs font-medium uppercase tracking-wide">DAYS</div>
+        </div>
+        <div class="bg-black text-white rounded-lg py-4 px-3 shadow-md w-24 sm:w-28 mx-auto">
+          <div id="hours" class="text-3xl sm:text-4xl font-bold">00</div>
+          <div class="mt-1 text-xs font-medium uppercase tracking-wide">HRS</div>
+        </div>
+        <div class="bg-black text-white rounded-lg py-4 px-3 shadow-md w-24 sm:w-28 mx-auto">
+          <div id="minutes" class="text-3xl sm:text-4xl font-bold">00</div>
+          <div class="mt-1 text-xs font-medium uppercase tracking-wide">MINS</div>
+        </div>
+        <div class="bg-black text-white rounded-lg py-4 px-3 shadow-md w-24 sm:w-28 mx-auto">
+          <div id="seconds" class="text-3xl sm:text-4xl font-bold">00</div>
+          <div class="mt-1 text-xs font-medium uppercase tracking-wide">SECS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+
+  <!-- Gallery Marquee with JS -->
+  <section id="gallery" class="py-16 px-6 bg-gray-50">
+    <h2 class="text-3xl font-semibold text-center mb-6">Photo Gallery</h2>
+  
+    <div id="marqueeContainer" class="overflow-hidden">
+        <div id="marqueeContent" class="flex space-x-6">
+            <img src="images/6I3A8869.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A7885.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8164.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8191.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8196.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8218.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8255.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8315.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8369.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8375.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8381.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8388.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8423.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8435.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8440.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8445.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8525.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A8539.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/IMG_7976.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <!--<!-- Repeat images for seamless scrolling 
+            <img src="images/6I3A8869.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
+            <img src="images/6I3A7885.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />-->
+        </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="py-16 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-6">RSVP</h2>
+    <iframe src="YOUR_GOOGLE_FORM_LINK" class="w-full max-w-3xl mx-auto" height="500" frameborder="0"></iframe>
+  </section>
+
+  <!-- Notes / FAQ -->
+  <section id="notes" class="py-16 px-6 bg-gray-100">
+    <h2 class="text-3xl font-semibold text-center mb-6">Notes</h2>
+    <div class="max-w-3xl mx-auto text-left space-y-4">
+      <div>
+        <h3 class="font-semibold">Dress Guide</h3>
+        <p>Please wear semi-formal attire. Gentlemen: long sleeves and slacks. Ladies: cocktail dresses, jumpsuits, or gowns.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">Gifts</h3>
+        <p>Your presence is the greatest gift. If you wish to give something, vouchers are appreciated. See our gift registry.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">FAQs</h3>
+        <p>RSVP by June 10, 2026. Limited seats—if your plans change, please let us know. Parking is available on a first-come basis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center">
+    <p class="text-gray-600">Made with ❤️</p>
+  </footer>
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="music/Tenerife Sea - Piano Cover.m4a" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Music control button -->
+  <button id="musicToggle" class="fixed bottom-4 right-4 p-3 text-white rounded-lg shadow-md">
+    🔊
+  </button>
+
+</body>
+</html>
