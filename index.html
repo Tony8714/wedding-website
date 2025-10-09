@@ -17,52 +17,88 @@
   <!-- Custom JS -->
   <script src="script.js" defer></script>
   <style>
-    /* Default gallery alignment */
-    #marqueeContainer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    /* ---------- STORY (center for tablets & mobile-landscape) ---------- */
+    /* default: keep desktop behavior (start/left) */
+    #story .grid-container {
+      justify-items: start;
     }
 
+    /* tablets (iPad) and smaller desktops up to 1024px: center everything in the grid */
+    @media (max-width: 1024px) {
+      #story .grid-container {
+        justify-items: center;    /* center grid cell contents horizontally */
+        text-align: center;       /* center text inside cells */
+      }
+      #story .story-text {
+        max-width: 44rem;         /* avoid super-wide text columns */
+      }
+      #story .story-heading {
+        font-size: clamp(2rem, 6vw, 4.5rem); /* responsive heading to avoid overflow */
+        overflow-wrap: break-word;
+        line-height: 1.02;
+      }
+      #story img {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 420px;
+        width: 80%;
+        height: auto;
+      }
+    }
+
+    /* mobile landscape (short viewport height) — tighten sizes */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #story .grid-container {
+        justify-items: center;
+        align-items: center;
+      }
+      #story .story-heading {
+        font-size: clamp(1.6rem, 8vw, 3.5rem);
+      }
+      #story img {
+        width: 40vw;
+        max-width: 360px;
+      }
+    }
+
+    /* ---------- GALLERY MARQUEE (keep horizontal overflow but center when it fits) ---------- */
+    /* Use overflow-x:auto so gallery remains scrollable/overflowing */
+    #marqueeContainer {
+      overflow-x: auto;                 /* allow horizontal scroll */
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* marquee content: center items when content is narrower than viewport;
+      keep min-width: max-content so items don't collapse (allows scrolling if wider) */
     #marqueeContent {
       display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
       gap: 1.5rem;
+      align-items: center;
+      justify-content: center;   /* centers entire row when it fits the container */
+      min-width: max-content;    /* keeps items in a single row and enables overflow if needed */
+      padding: 1rem 1.25rem;
     }
 
-    /* ✅ For mobile landscape mode */
-    @media (max-height: 500px) and (orientation: landscape) {
-      #marqueeContent {
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-      }
-      #marqueeContent img {
-        width: 40vw;
-        height: auto;
-      }
+    /* image sizing: fixed flex item so it doesn't shrink unexpectedly */
+    #marqueeContent img {
+      flex: 0 0 auto;
+      width: 16rem;
+      height: 10rem;
+      object-fit: cover;
+      border-radius: .5rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
 
-    /* ✅ For iPads (portrait and landscape) */
+    /* iPad-specific sizing */
     @media (min-width: 768px) and (max-width: 1024px) {
-      #marqueeContainer {
-        justify-content: center;
-        align-items: center;
-        overflow-x: auto;
-      }
-      #marqueeContent {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem;
-      }
-      #marqueeContent img {
-        width: 30vw; /* fit neatly on iPads */
-        height: auto;
-      }
+      #marqueeContent img { width: 30vw; height: auto; }
     }
-  </style>
+
+    /* mobile landscape tweak */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #marqueeContent img { width: 40vw; height: auto; }
+    }
+    </style>
 </head>
 <body 
     class="bg-white text-gray-800 font-serif leading-relaxed"
@@ -149,7 +185,7 @@
   
   <!-- Love Story Highlight -->
   <section id="story" class="py-16 px-6" style="background-color: #e8ddd4;">
-    <div class="max-w-6xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-x-10 items-center">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-10 items-center grid-container">
 
       <!-- Heading (mobile: above image, desktop: inside text block) -->
       <h2 class="text-3xl sm:text-2xl md:text-5xl font-semibold mb-6 md:mb-5 md:hidden text-gray-800 text-center" style="font-family: 'Playfair Display', serif;">
@@ -157,13 +193,13 @@
       </h2>
 
       <!-- Image -->
-      <div class="mb-5 md:mb-0 order-2 md:order-none">
-        <img src="images/crop1.JPG" alt="Love Story" class="rounded-lg shadow-lg w-full object-cover">
+      <div class="order-2 md:order-none">
+        <img src="images/crop1.JPG" alt="Love Story" class="rounded-lg shadow-lg w-full object-cover justify-self-center mx-auto md:mx-0" />
       </div>
 
       <!-- Text Content (desktop: includes heading) -->
-      <div class="text-gray-800 order-3 md:order-none">
-        <h2 class="hidden md:block text-4xl sm:text-5xl md:text-8xl font-semibold mb-20" style="font-family: 'Playfair Display', serif;">
+      <div class="text-gray-800 order-3 md:order-none story-text">
+        <h2 class="hidden md:block text-4xl md:text-6xl font-semibold mb-5 md:mb-10 story-heading" style="font-family: 'Playfair Display', serif;">
           Join Us in Celebration!
         </h2>
         <p class="text-base sm:text-xl leading-relaxed">
