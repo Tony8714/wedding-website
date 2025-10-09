@@ -45,33 +45,40 @@ setInterval(updateCountdown, 1000);
 
 // Background Music Autoplay with Toggle
 document.addEventListener("DOMContentLoaded", () => {
-    const bgMusic = document.getElementById("bgMusic");
-    const musicToggle = document.getElementById("musicToggle");
-  
-    if (!bgMusic || !musicToggle) return;
-  
-    // Try autoplay
-    bgMusic.play().catch(() => {
-      document.addEventListener(
-        "click",
-        () => {
-          bgMusic.play();
-        },
-        { once: true }
-      );
+  const bgMusic = document.getElementById("bgMusic");
+  const musicToggle = document.getElementById("musicToggle");
+
+  if (!bgMusic || !musicToggle) return;
+
+  let isPlaying = false;
+
+  // Require user interaction to start music
+  const enableMusic = () => {
+    bgMusic.play().then(() => {
+      isPlaying = true;
+      musicToggle.textContent = "🔊";
+    }).catch(() => {
+      console.warn("Playback failed. User gesture required.");
     });
-  
-    // Toggle Play / Pause
-    musicToggle.addEventListener("click", () => {
-      if (bgMusic.paused) {
-        bgMusic.play();
+  };
+
+  // First user interaction triggers music
+  document.addEventListener("click", enableMusic, { once: true });
+
+  // Toggle button
+  musicToggle.addEventListener("click", () => {
+    if (isPlaying) {
+      bgMusic.pause();
+      isPlaying = false;
+      musicToggle.textContent = "🔇";
+    } else {
+      bgMusic.play().then(() => {
+        isPlaying = true;
         musicToggle.textContent = "🔊";
-      } else {
-        bgMusic.pause();
-        musicToggle.textContent = "🔇";
-      }
-    });
+      });
+    }
   });
+});
 
   // Slideshow
   const marqueeContainer = document.getElementById('marqueeContainer');
