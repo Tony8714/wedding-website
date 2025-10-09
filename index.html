@@ -16,6 +16,53 @@
   <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
   <!-- Custom JS -->
   <script src="script.js" defer></script>
+  <style>
+    /* Default gallery alignment */
+    #marqueeContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #marqueeContent {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    /* ✅ For mobile landscape mode */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #marqueeContent {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      #marqueeContent img {
+        width: 40vw;
+        height: auto;
+      }
+    }
+
+    /* ✅ For iPads (portrait and landscape) */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      #marqueeContainer {
+        justify-content: center;
+        align-items: center;
+        overflow-x: auto;
+      }
+      #marqueeContent {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+      #marqueeContent img {
+        width: 30vw; /* fit neatly on iPads */
+        height: auto;
+      }
+    }
+  </style>
 </head>
 <body 
     class="bg-white text-gray-800 font-serif leading-relaxed"
