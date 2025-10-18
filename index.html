@@ -7,116 +7,47 @@
   <link rel="icon" href="images/logo.jpg" type="image/jpg">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="style.css" />
+
   <!-- Lightbox for gallery -->
-  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
   
   <!-- Font (Playfair Display, similar to "The Seasons") -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   
-  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
   <!-- Custom JS -->
   <script src="script.js" defer></script>
-  <style>
-    /* ---------- STORY (center for tablets & mobile-landscape) ---------- */
-    /* default: keep desktop behavior (start/left) */
-    #story .grid-container {
-      justify-items: start;
-    }
 
-    /* tablets (iPad) and smaller desktops up to 1024px: center everything in the grid */
-    @media (max-width: 1024px) {
-      #story .grid-container {
-        justify-items: center;    /* center grid cell contents horizontally */
-        text-align: center;       /* center text inside cells */
-      }
-      #story .story-text {
-        max-width: 44rem;         /* avoid super-wide text columns */
-      }
-      #story .story-heading {
-        font-size: clamp(2rem, 6vw, 4.5rem); /* responsive heading to avoid overflow */
-        overflow-wrap: break-word;
-        line-height: 1.02;
-      }
-      #story img {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 420px;
-        width: 80%;
-        height: auto;
-      }
-    }
-
-    /* mobile landscape (short viewport height) — tighten sizes */
-    @media (max-height: 500px) and (orientation: landscape) {
-      #story .grid-container {
-        justify-items: center;
-        align-items: center;
-      }
-      #story .story-heading {
-        font-size: clamp(1.6rem, 8vw, 3.5rem);
-      }
-      #story img {
-        width: 40vw;
-        max-width: 360px;
-      }
-    }
-
-    /* ---------- GALLERY MARQUEE (keep horizontal overflow but center when it fits) ---------- */
-    /* Use overflow-x:auto so gallery remains scrollable/overflowing */
-    #marqueeContainer {
-      overflow-x: auto;                 /* allow horizontal scroll */
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* marquee content: center items when content is narrower than viewport;
-      keep min-width: max-content so items don't collapse (allows scrolling if wider) */
-    #marqueeContent {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      justify-content: center;   /* centers entire row when it fits the container */
-      min-width: max-content;    /* keeps items in a single row and enables overflow if needed */
-      padding: 1rem 1.25rem;
-    }
-
-    /* image sizing: fixed flex item so it doesn't shrink unexpectedly */
-    #marqueeContent img {
-      flex: 0 0 auto;
-      width: 16rem;
-      height: 10rem;
-      object-fit: cover;
-      border-radius: .5rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-
-    /* iPad-specific sizing */
-    @media (min-width: 768px) and (max-width: 1024px) {
-      #marqueeContent img { width: 30vw; height: auto; }
-    }
-
-    /* mobile landscape tweak */
-    @media (max-height: 500px) and (orientation: landscape) {
-      #marqueeContent img { width: 40vw; height: auto; }
-    }
-    </style>
 </head>
 <body 
     class="bg-white text-gray-800 font-serif leading-relaxed"
-    style="background-image: url('images/1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+    style="background-color: white;"
 >
-<!-- Navigation -->
-<nav class="fixed w-full bg-white shadow-sm z-20">
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white shadow-sm z-20">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex justify-between items-center py-1">
-        <!-- Logo / Title -->
-        <a href="#crush" class="text-xl font-bold">
-            <img src="images/logo.jpg" alt="AJ" class="h-10 w-auto">
-        </a>
-  
         <!-- Hamburger Button (hidden on desktop) -->
         <button 
           id="menu-btn" 
-          class="block md:hidden focus:outline-none"
+          class="block md:hidden focus:outline-none ml-auto"
         >
           <!-- icon -->
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" 
@@ -127,23 +58,23 @@
         </button>
   
         <!-- Desktop Menu -->
-        <ul class="hidden md:flex space-x-6">
-          <li><a href="#story" class="hover:text-amber-700">Love Story</a></li>
-          <li><a href="#entourage" class="hover:text-amber-700">Entourage</a></li>
+        <ul class="hidden md:flex space-x-6 ml-auto">
+          <li><a href="#invitation" class="hover:text-amber-700">Invitation</a></li>
           <li><a href="#save-the-date" class="hover:text-amber-700">Date & Venue</a></li>
-          <li><a href="#gallery" class="hover:text-amber-700">Gallery</a></li>
+          <li><a href="#entourage" class="hover:text-amber-700">Entourage</a></li>
+          <li><a href="gallery.html" class="hover:text-amber-700">Gallery</a></li>
           <li><a href="#rsvp" class="hover:text-amber-700">RSVP</a></li>
           <li><a href="#notes" class="hover:text-amber-700">Notes</a></li>
         </ul>
       </div>
   
       <!-- Mobile Menu (hidden by default) -->
-      <ul id="menu" class="hidden flex-col space-y-4 pb-4 md:hidden bg-cover bg-center text-black"
+      <ul id="menu" class="hidden flex-col items-end text-right space-y-4 pb-4 md:hidden bg-cover bg-center text-black"
           style="background-image: url('images/1.jpg');">
-        <li><a href="#story" class="block hover:text-amber-700">Love Story</a></li>
-        <li><a href="#entourage" class="block hover:text-amber-700">Entourage</a></li>
+        <li><a href="#invitation" class="block hover:text-amber-700">Invitation</a></li>
         <li><a href="#save-the-date" class="block hover:text-amber-700">Date & Venue</a></li>
-        <li><a href="#gallery" class="block hover:text-amber-700">Gallery</a></li>
+        <li><a href="#entourage" class="block hover:text-amber-700">Entourage</a></li>
+        <li><a href="gallery.html" class="block hover:text-amber-700">Gallery</a></li>
         <li><a href="#rsvp" class="block hover:text-amber-700">RSVP</a></li>
         <li><a href="#notes" class="block hover:text-amber-700">Notes</a></li>
       </ul>
@@ -151,77 +82,157 @@
   </nav>
   
 
-  <!-- Hero / Invitation -->
-  <section 
-    id="crush" 
-    class="h-screen flex flex-col justify-center items-start relative bg-no-repeat bg-center overflow-hidden"
-  >
+  <!-- Logo Header -->
+  <section id="home" class="text-center py-12 px-4">
+    <div class="max-w-md mx-auto">
+      <img src="images/logo_crush.jpg" alt="Anthony & Jazee Wedding Logo" class="w-full h-auto mx-auto mt-10" />
+    </div>
+  </section>
 
-    <!-- Main background image (fit version) -->
-    <div 
-      class="absolute inset-0 bg-no-repeat bg-center bg-cover"
-      style="
-        background-image: url('images/bg2.JPEG');
-        background-position: center center;
-      "
-    ></div>
-
-    <!-- Overlay for readability -->
-    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-
-    <!-- Content (moved slightly up) -->
-    <div class="relative z-10 text-white px-6 md:px-20 text-left md:text-center -translate-y-14 md:-translate-y-17">
-      <h1 
-        class="text-5xl md:text-7xl font-bold mb-2 leading-tight" 
-        style="font-family: 'Cormorant Garamond', serif;"
-      >
-        <span class="block md:inline">ANTHONY</span>
-        <span class="block md:inline">& JAZEE</span>
-      </h1>
-      <p class="italic text-lg md:text-3xl">Two hearts. One promise.</p>
-      <p class="mt-0.5 text-1xl">December 10, 2025</p>
+  <!-- Image Header -->
+  <section class="text-center py-12 px-4">
+    <div class="max-w-md mx-auto">
+      <img src="images/2 (2).jpg" class="w-full h-auto mx-auto" />
     </div>
   </section>
   
-  <!-- Love Story Highlight -->
-  <section id="story" class="py-16 px-6" style="background-color: #e8ddd4;">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-x-10 items-center grid-container">
+  <!-- Invitation -->
+  <section id="invitation" class="text-center py-10 px-6" style="background-color: #dcd4cc;">
+    <div class="max-w-2xl mx-auto">
+      <!-- Intro Text -->
+      <p class="text-2xl sm:text-2xl italic mb-10 mt-12" style="font-family: 'Palatino Linotype', serif; color: #6a6146;">
+        Please join us to celebrate
+      </p>
 
-      <!-- Heading (mobile: above image, desktop: inside text block) -->
-      <h2 class="text-3xl sm:text-2xl md:text-5xl font-semibold mb-6 md:mb-5 md:hidden text-gray-800 text-center" style="font-family: 'Playfair Display', serif;">
-        Join Us in Celebration!
+      <!-- Scripted Title -->
+      <h2 class="text-6xl sm:text-6xl mb-14" style="font-family: 'Palace Script MT', cursive; color: #6a6146;">
+        our wedding
       </h2>
 
-      <!-- Image -->
-      <div class="order-2 md:order-none">
-        <img src="images/crop1.JPG" alt="Love Story" class="rounded-lg shadow-lg w-full object-cover justify-self-center mx-auto md:mx-0" />
+      <!-- Botanical Illustration (placeholder emoji or SVG) -->
+      <div class="mb-10 text-sm text-gray-500">
+        <img src="images/flower.png" class="w-16 h-auto mx-auto" />
       </div>
 
-      <!-- Text Content (desktop: includes heading) -->
-      <div class="text-gray-800 order-3 md:order-none story-text">
-        <h2 class="hidden md:block text-4xl md:text-6xl font-semibold mb-5 md:mb-10 story-heading" style="font-family: 'Playfair Display', serif;">
-          Join Us in Celebration!
-        </h2>
-        <p class="text-base sm:text-xl leading-relaxed">
-          From college blockmates to lifelong partners, our story has been one of laughter, growth, and unwavering love. After years of shared dreams and countless memories, we’re finally tying the knot. We would be truly honored to celebrate this special day with the people we love and who have loved and supported us through every chapter of our journey.
+      <!-- Body Text -->
+      <p class="text-base sm:text-lg font-serif leading-relaxed mb-10" style="font-family: 'Playfair Display', serif; color: #6a6146;">
+        After 10 years together.<br>
+        we’ve decided to tie the knot<br>
+        and would be delighted to have you join us as we say
+      </p>
+
+      <!-- 'I do' Highlight -->
+      <h3 class="text-7xl sm:text-7xl italic mb-10" style="font-family: 'Palace Script MT', cursive; color: #6a6146;">
+        "I do".
+      </h3>
+    </div>
+  </section>
+
+  <!-- Save the date -->
+  <section id="save-the-date" class="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
+    <img
+      src="images/save the date.jpg"
+      alt="Save the Date"
+      class="absolute inset-0 w-full h-full object-cover object-center transform scale-[1.67] sm:scale-100 transition-transform duration-500"
+    />
+  </section>
+
+  <!-- Countdown Section -->
+  <section id="countdown-section" class="py-16 px-6" style="background-color: #fbfafa;">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Romantic Heading -->
+      <h2 class="text-3xl sm:text-5xl md:text-5xl italic mb-10" style="font-family: 'Corinthia', cursive; color: #4B2E2E;">
+        Forever sealed with a vow in...
+      </h2>
+
+      <!-- Countdown Display -->
+      <div class="flex flex-wrap justify-center items-center gap-1 sm:gap-3 text-center">
+        <!-- Days -->
+        <div class="text-[#000000] rounded-lg py-1 px-1 shadow-none w-16 sm:w-20 md:w-20" style="font-family: Arial, sans-serif;">
+          <div id="days" class="text-3xl sm:text-5xl md:text-6xl font-bold tracking-wide">00</div>
+          <div class="mt-0.5 text-[10px] sm:text-xs font-medium uppercase tracking-wide">DAYS</div>
+        </div>
+
+        <!-- Colon -->
+        <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#000000]">:</div>
+
+        <!-- Hours -->
+        <div class="text-[#000000] rounded-lg py-1 px-1 shadow-none w-16 sm:w-20 md:w-20" style="font-family: Arial, sans-serif;">
+          <div id="hours" class="text-3xl sm:text-5xl md:text-6xl font-bold tracking-wide">00</div>
+          <div class="mt-0.5 text-[10px] sm:text-xs font-medium uppercase tracking-wide">HOURS</div>
+        </div>
+
+        <!-- Colon -->
+        <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#000000]">:</div>
+
+        <!-- Minutes -->
+        <div class="text-[#000000] rounded-lg py-1 px-1 shadow-none w-16 sm:w-20 md:w-20" style="font-family: Arial, sans-serif;">
+          <div id="minutes" class="text-3xl sm:text-5xl md:text-6xl font-bold tracking-wide">00</div>
+          <div class="mt-0.5 text-[10px] sm:text-xs font-medium uppercase tracking-wide">MINUTES</div>
+        </div>
+
+        <!-- Colon -->
+        <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#000000]">:</div>
+
+        <!-- Seconds -->
+        <div class="text-[#b1a183] rounded-lg py-1 px-1 shadow-none w-16 sm:w-20 md:w-20" style="font-family: Arial, sans-serif;">
+          <div id="seconds" class="text-3xl sm:text-5xl md:text-6xl font-bold tracking-wide">00</div>
+          <div class="mt-0.5 text-[10px] sm:text-xs font-medium uppercase tracking-wide">SECONDS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section 
+    id="venue" 
+    class="py-20 px-6 flex flex-col justify-center items-center bg-gradient-to-b from-white to-brown-50"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
+      <!-- Ceremony Card -->
+      <div class="bg-white rounded-2xl shadow-lg text-center py-10 px-6 backdrop-blur-sm bg-opacity-95">
+        <img src="images/ring.jpg" alt="rings" class="mx-auto mb-2 w-20 h-20" />
+        <h3 
+          class="text-5xl italic mb-6" 
+          style="font-family: 'Brush Script MT', cursive; color: #4B2E2E;"
+        >
+          Ceremony
+        </h3>
+        <h4 class="text-lg font-semibold mb-4" style="font-family: 'Playfair Display', serif;">
+          CHAPEL OF SAN PEDRO CALUNGSOD
+        </h4>
+        <p class="text-gray-700 mb-20">SM Seaside Complex, Church Ave, Cebu City, 6000 Cebu</p>
+        <p class="text-lg text-gray-700 mb-6">1:30 PM</p>
+      </div>
+
+      <!-- Reception Card -->
+      <div class="bg-white rounded-2xl shadow-lg text-center py-10 px-6 backdrop-blur-sm bg-opacity-95">
+        <img src="images/party.jpg" alt="glasses" class="mx-auto mb-2 w-20 h-20" />
+        <h3 
+          class="text-5xl italic mb-6" 
+          style="font-family: 'Brush Script MT', cursive; color: #4B2E2E;"
+        >
+          Reception
+        </h3>
+        <h4 class="text-lg font-semibold mb-4" style="font-family: 'Playfair Display', serif;">
+          VIVACE EVENTS CENTER
+        </h4>
+        <p class="text-gray-700 mb-20">
+          SM Seaside Complex, F. Vestil St, Cebu City, 6000 Cebu
         </p>
+        <p class="text-lg text-gray-700 mb-6">5:30 PM</p>
       </div>
-
     </div>
   </section>
 
   <!-- Entourage Section -->
   <section 
     id="entourage"
-    class="min-h-screen flex justify-center items-center py-16 px-6 text-center">
+    class="min-h-screen flex justify-center items-center py-16 px-6 text-center" style="background-color: #dcd4cc;">
 
     <!-- Content -->
     <div class="relative z-10 max-w-md w-full">
       <!-- Title -->
-      <h1 class="text-4xl md:text-5xl font-bold text-[#4B2E2E]" style="font-family: 'Cormorant Garamond', serif;">
-        Malait <span class="text-[#4B2E2E]">-</span> Rubio
-      </h1>
-      <h2 class="text-4xl italic text-[#4B2E2E] mt-1" style="font-family: 'Brush Script MT', cursive;">Nuptials</h2>
+      <h1 class="text-6xl italic text-[#4B2E2E] mt-1" style="font-family: 'Allura', cursive;">Entourage</h1>
 
       <!-- Parents -->
       <div class="mt-6">
@@ -378,130 +389,26 @@
     </div>
   </section>
 
-  <!-- Save the Date -->
-  <section id="save-the-date" class="h-screen flex flex-col justify-center items-center bg-cover relative" style="background-image: url('images/6I3A8420.jpeg'); background-position: center;">
-    <!-- Overlay Text Container -->
-    <div class="absolute top-12 left-1/2 transform -translate-x-1/2 z-10 px-4 text-center whitespace-nowrap">
-      <h2 class="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-wide uppercase text-white drop-shadow-lg leading-tight" style="font-family: 'Playfair Display', serif;">
-        SAVE <span class="text-xl sm:text-2xl align-center">THE</span> DATE
-      </h2>
-    </div>
-  </section>
-
-  <section 
-    id="venue" 
-    class="py-20 px-6 flex flex-col justify-center items-center bg-gradient-to-b from-white to-brown-50"
-  >
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
-      <!-- Ceremony Card -->
-      <div class="bg-white rounded-2xl shadow-lg text-center py-10 px-6 backdrop-blur-sm bg-opacity-95">
-        <img src="images/ring.jpg" alt="rings" class="mx-auto mb-2 w-20 h-20" />
-        <h3 
-          class="text-5xl italic mb-6" 
-          style="font-family: 'Brush Script MT', cursive; color: #4B2E2E;"
-        >
-          Ceremony
-        </h3>
-        <h4 class="text-lg font-semibold mb-4" style="font-family: 'Playfair Display', serif;">
-          CHAPEL OF SAN PEDRO CALUNGSOD
-        </h4>
-        <p class="text-gray-700 mb-20">SM Seaside Complex, Church Ave, Cebu City, 6000 Cebu</p>
-        <p class="text-lg text-gray-700 mb-6">1:30 PM</p>
+    <!-- Gallery Marquee with Hover Effects and Lightbox -->
+    <section id="gallery" class="py-20 px-6 bg-[#f8f6f3]">
+      <div class="max-w-6xl mx-auto text-center">
+        
       </div>
-
-      <!-- Reception Card -->
-      <div class="bg-white rounded-2xl shadow-lg text-center py-10 px-6 backdrop-blur-sm bg-opacity-95">
-        <img src="images/party.jpg" alt="glasses" class="mx-auto mb-2 w-20 h-20" />
-        <h3 
-          class="text-5xl italic mb-6" 
-          style="font-family: 'Brush Script MT', cursive; color: #4B2E2E;"
-        >
-          Reception
-        </h3>
-        <h4 class="text-lg font-semibold mb-4" style="font-family: 'Playfair Display', serif;">
-          VIVACE EVENTS CENTER
-        </h4>
-        <p class="text-gray-700 mb-20">
-          SM Seaside Complex, F. Vestil St, Cebu City, 6000 Cebu
-        </p>
-        <p class="text-lg text-gray-700 mb-6">5:30 PM</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Countdown Section -->
-  <section id="countdown-section" class="py-16 px-6" style="background-color: #e8ddd4;">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-10" style="font-family: 'Playfair Display', serif; color: #4B2E2E">
-        Days remaining before we say <span class="italic">"I do"</span>
-      </h2>
-  
-    <!-- Countdown Display -->
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 justify-center text-center">
-        <div class="bg-black text-white rounded-lg py-4 px-3 shadow-md w-24 sm:w-28 mx-auto">
-          <div id="days" class="text-3xl sm:text-4xl font-bold">00</div>
-          <div class="mt-1 text-xs font-medium uppercase tracking-wide">DAYS</div>
-        </div>
-        <div class="bg-black text-white rounded-lg py-4 px-3 shadow-md w-24 sm:w-28 mx-auto">
-          <div id="hours" class="text-3xl sm:text-4xl font-bold">00</div>
-          <div class="mt-1 text-xs font-medium uppercase tracking-wide">HRS</div>
-        </div>
-        <div class="bg-black text-white rounded-lg py-4 px-3 shadow-md w-24 sm:w-28 mx-auto">
-          <div id="minutes" class="text-3xl sm:text-4xl font-bold">00</div>
-          <div class="mt-1 text-xs font-medium uppercase tracking-wide">MINS</div>
-        </div>
-        <div class="bg-black text-white rounded-lg py-4 px-3 shadow-md w-24 sm:w-28 mx-auto">
-          <div id="seconds" class="text-3xl sm:text-4xl font-bold">00</div>
-          <div class="mt-1 text-xs font-medium uppercase tracking-wide">SECS</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Marquee with JS -->
-  <section id="gallery" class="py-16 px-6 bg-gray-50">
-    <h2 class="text-3xl font-semibold text-center mb-6">Photo Gallery</h2>
-  
-    <div id="marqueeContainer" class="overflow-hidden">
-        <div id="marqueeContent" class="flex space-x-6">
-            <img src="images/6I3A8869.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A7885.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8164.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8191.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8196.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8218.JPEG" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8255.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8315.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8369.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8375.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8381.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8388.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8423.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8435.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8440.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8445.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8525.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A8539.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/IMG_7976.JPG" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <!--<!-- Repeat images for seamless scrolling 
-            <img src="images/6I3A8869.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />
-            <img src="images/6I3A7885.jpeg" class="w-64 object-contain bg-white rounded-lg shadow-lg" />-->
-        </div>
-    </div>
-  </section>
+    </section>
 
   <!-- RSVP -->
-  <section id="rsvp" class="py-20 px-6 text-center">
+  <section id="rsvp" class="py-20 px-6 text-center" style="background-color: #dcd4cc;">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl sm:text-5xl font-semibold mb-8 text-gray-800" style="font-family: 'Playfair Display', serif;">
-        RSVP
+        Be Our Guest
       </h2>
       <p class="text-base sm:text-lg mb-6 text-gray-700">
-        Kindly let us know if you’ll be joining us on our special day.
+        Let us know if you can join us on our big day.<br>
+        Please respond on or before November 15.
       </p>
       <iframe 
-        src="YOUR_GOOGLE_FORM_LINK" 
-        class="w-full h-[600px] rounded-lg shadow-lg border border-gray-300" 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSe2PgxPd24TPNFZHm322oJpN9zXNZeNOs3FYc7TYpp226GHEg/viewform?embedded=true" 
+        class="w-full h-[600px] sm:h-[700px] rounded-md" 
         frameborder="0" 
         allowfullscreen
       ></iframe>
@@ -541,6 +448,33 @@
   <button id="musicToggle" class="fixed bottom-4 right-4 p-3 text-white rounded-lg shadow-md z-50">
     🔊
   </button>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      closeButton: true,
+      keyboardNavigation: true,
+      slideEffect: 'fade',
+      moreText: 'View More',
+      plyr: {
+        css: 'https://cdn.plyr.io/3.6.2/plyr.css',
+        js: 'https://cdn.plyr.io/3.6.2/plyr.js',
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script>
+    Fancybox.bind("[data-fancybox='gallery']", {
+      Thumbs: {
+        autoStart: true,
+      },
+      Toolbar: {
+        display: ["close"],
+      },
+    });
+  </script>
 </body>
 </html>

@@ -80,20 +80,37 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-  // Slideshow
-  const marqueeContainer = document.getElementById('marqueeContainer');
-  const marqueeContent = document.getElementById('marqueeContent');
 
+document.addEventListener("DOMContentLoaded", () => {
+  const marquee = document.getElementById("marqueeContent");
   let scrollAmount = 0;
 
-  function marqueeScroll() {
-    scrollAmount += 0.5; // speed of scrolling
-    if (scrollAmount >= marqueeContent.scrollWidth / 2) {
-      scrollAmount = 0; // reset for seamless loop
+  function scrollGallery() {
+    scrollAmount -= 1;
+    marquee.style.transform = `translateX(${scrollAmount}px)`;
+
+    // Reset scroll when it reaches halfway
+    if (Math.abs(scrollAmount) >= marquee.scrollWidth / 2) {
+      scrollAmount = 0;
     }
-    marqueeContainer.scrollLeft = scrollAmount;
-    requestAnimationFrame(marqueeScroll);
+
+    requestAnimationFrame(scrollGallery);
   }
 
-  marqueeScroll();
+  scrollGallery();
+});
+
+
+const images = document.querySelectorAll("#marqueeContent img");
+
+images.forEach(img => {
+  img.addEventListener("mouseenter", () => {
+    img.style.transform = "scale(1.05)";
+    img.style.transition = "transform 0.3s ease";
+  });
+
+  img.addEventListener("mouseleave", () => {
+    img.style.transform = "scale(1)";
+  });
+});
   

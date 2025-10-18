@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJ Wedding Website</title>
+  <link rel="icon" href="images/logo.jpg" type="image/jpg">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Lightbox for gallery -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+  
+  <!-- Font (Playfair Display, similar to "The Seasons") -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  
+  <!-- Custom JS -->
+  <script src="script.js" defer></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+<body 
+    class="bg-white text-gray-800 font-serif leading-relaxed"
+    style="background-color: white;"
+>
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white shadow-sm z-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center py-1">
+        <!-- Hamburger Button (hidden on desktop) -->
+        <button 
+          id="menu-btn" 
+          class="block md:hidden focus:outline-none ml-auto"
+        >
+          <!-- icon -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" 
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" 
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+  
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 ml-auto">
+            <li><a href="index.html" class="block hover:text-amber-700">Home</a></li>   
+            <li><a href="index.html#invitation" class="hover:text-amber-700">Invitation</a></li>
+            <li><a href="index.html#save-the-date" class="hover:text-amber-700">Date & Venue</a></li>
+            <li><a href="index.html#entourage" class="hover:text-amber-700">Entourage</a></li>
+            <li><a href="index.html#rsvp" class="hover:text-amber-700">RSVP</a></li>
+            <li><a href="index.html#notes" class="hover:text-amber-700">Notes</a></li>
+        </ul>
+      </div>
+  
+      <!-- Mobile Menu (hidden by default) -->
+      <ul id="menu" class="hidden flex-col items-end text-right space-y-4 pb-4 md:hidden bg-cover bg-center text-black"
+          style="background-image: url('images/1.jpg');">
+        <li><a href="index.html" class="block hover:text-amber-700">Home</a></li>
+        <li><a href="index.html#invitation" class="block hover:text-amber-700">Invitation</a></li>
+        <li><a href="index.html#save-the-date" class="block hover:text-amber-700">Date & Venue</a></li>
+        <li><a href="index.html#entourage" class="block hover:text-amber-700">Entourage</a></li>
+        <li><a href="index.html#rsvp" class="block hover:text-amber-700">RSVP</a></li>
+        <li><a href="index.html#notes" class="block hover:text-amber-700">Notes</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<!-- Gallery Marquee with Hover Effects and Lightbox -->
+<section id="gallery" class="py-20 px-6 bg-[#f8f6f3]">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-serif font-semibold mb-10 text-gray-800 tracking-wide">Gallery</h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <!-- Prenup Shoot 1 -->
+        <a href="prenup1.html" class="group relative block rounded-xl overflow-hidden shadow hover:shadow-lg transition duration-300 border border-gray-200">
+        <!-- Album Image -->
+        <img src="images/Prenup Shoot 1/1.jpeg" alt="Prenup Shoot 1"
+            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center px-4">
+                <h3 class="text-xl font-bold tracking-wide">PRENUP SHOOT 1</h3>
+                <p class="text-sm font-medium mt-1">Casual</p>
+            </div>
+        </a>
+
+        <!-- Prenup Shoot 2 -->
+        <a href="prenup2.html" class="group relative block rounded-xl overflow-hidden shadow hover:shadow-lg transition duration-300 border border-gray-200">
+        <img src="images/Prenup Shoot 2/2 (1).jpeg" alt="Prenup Shoot 2"
+            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+        
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center px-4">
+                <h3 class="text-xl font-bold tracking-wide">PRENUP SHOOT 2</h3>
+                <p class="text-sm font-medium mt-1">Formal</p>
+            </div>
+        </a>
+
+        <!-- Prenup Shoot 3 -->
+        <a href="prenup3.html" class="group relative block rounded-xl overflow-hidden shadow hover:shadow-lg transition duration-300 border border-gray-200">
+        <img src="images/Prenup Shoot 3/3 (1).JPEG" alt="Prenup Shoot 3"
+            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+        
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center px-4">
+                <h3 class="text-xl font-bold tracking-wide">PRENUP SHOOT 3</h3>
+                <p class="text-sm font-medium mt-1">Vintage</p>
+            </div>
+        </a>
+
+        <!-- Wedding Day -->
+        <a href="wedding_day.html" class="group relative block rounded-xl overflow-hidden shadow hover:shadow-lg transition duration-300 border border-gray-200">
+        <img src="images/Wedding Day/images(1).jpg" alt="Wedding Day"
+            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+        
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center px-4">
+                <h3 class="text-xl font-bold tracking-wide">Wedding Day</h3>
+                <p class="text-sm font-medium mt-1">Coming Soon</p>
+            </div>
+        </a>
+
+        <!-- Onsite Studio -->
+        <a href="onsite.html" class="group relative block rounded-xl overflow-hidden shadow hover:shadow-lg transition duration-300 border border-gray-200">
+        <img src="images/Wedding Day/images(1).jpg" alt="Onsite Studio"
+            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+        
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center px-4">
+                <h3 class="text-xl font-bold tracking-wide">Onsite Studio</h3>
+                <p class="text-sm font-medium mt-1">Coming Soon</p>
+            </div>
+        </a>
+    </div>
+  </div>
+</section>
+
+
+  <!--<section id="gallery" class="py-20 px-6 bg-[#f8f6f3]" x-data="{ album: 'ceremony' }">
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-serif font-semibold mb-10 text-gray-800 tracking-wide">Gallery</h2>
+
+        <!- - Album Tabs - ->
+        <div class="flex justify-center space-x-4 mb-10">
+        <button @click="album = 'ceremony'" :class="album === 'ceremony' ? 'bg-amber-200' : 'bg-white'" class="px-4 py-2 rounded-full shadow hover:shadow-md transition">Ceremony</button>
+        <button @click="album = 'reception'" :class="album === 'reception' ? 'bg-amber-200' : 'bg-white'" class="px-4 py-2 rounded-full shadow hover:shadow-md transition">Reception</button>
+        <button @click="album = 'portraits'" :class="album === 'portraits' ? 'bg-amber-200' : 'bg-white'" class="px-4 py-2 rounded-full shadow hover:shadow-md transition">Portraits</button>
+        </div>
+
+        <!- - Ceremony Album - ->
+        <div x-show="album === 'ceremony'" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <a href="images/6I3A8423.jpeg" data-fancybox="gallery"><img src="images/6I3A8423.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8435.jpeg" data-fancybox="gallery"><img src="images/6I3A8435.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8440.jpeg" data-fancybox="gallery"><img src="images/6I3A8440.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+        <!- - Add more ceremony images - ->
+        </div>
+
+        <!- - Reception Album - ->
+        <div x-show="album === 'reception'" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <a href="images/6I3A8375.jpeg" data-fancybox="gallery"><img src="images/6I3A8375.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8381.jpeg" data-fancybox="gallery"><img src="images/6I3A8381.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8388.jpeg" data-fancybox="gallery"><img src="images/6I3A8388.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8445.jpeg" data-fancybox="gallery"><img src="images/6I3A8445.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8525.jpeg" data-fancybox="gallery"><img src="images/6I3A8525.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8539.jpeg" data-fancybox="gallery"><img src="images/6I3A8539.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/IMG_7976.JPG" data-fancybox="gallery"><img src="images/IMG_7976.JPG" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+        <!- - Add more reception images - ->
+        </div>
+
+        <!- - Portraits Album - ->
+        <div x-show="album === 'portraits'" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <a href="images/6I3A8869.jpeg" data-fancybox="gallery"><img src="images/6I3A8869.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A7885.jpeg" data-fancybox="gallery"><img src="images/6I3A7885.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8164.jpeg" data-fancybox="gallery"><img src="images/6I3A8164.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8191.jpeg" data-fancybox="gallery"><img src="images/6I3A8191.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8196.jpeg" data-fancybox="gallery"><img src="images/6I3A8196.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8218.JPEG" data-fancybox="gallery"><img src="images/6I3A8218.JPEG" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8255.jpeg" data-fancybox="gallery"><img src="images/6I3A8255.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8315.jpeg" data-fancybox="gallery"><img src="images/6I3A8315.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+            <a href="images/6I3A8369.jpeg" data-fancybox="gallery"><img src="images/6I3A8369.jpeg" class="w-full aspect-[3/2] object-cover bg-white rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 hover:shadow-xl" /></a>
+        <!- - Add more portrait images - ->
+        </div>
+    </div>
+    </section>-->
+
+
+
+  <audio id="bgMusic" loop>
+    <source src="music/Tenerife Sea - Piano Cover.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Music control button -->
+  <button id="musicToggle" class="fixed bottom-4 right-4 p-3 text-white rounded-lg shadow-md z-50">
+    🔊
+  </button>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      closeButton: true,
+      keyboardNavigation: true,
+      slideEffect: 'fade',
+      moreText: 'View More',
+      plyr: {
+        css: 'https://cdn.plyr.io/3.6.2/plyr.css',
+        js: 'https://cdn.plyr.io/3.6.2/plyr.js',
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script>
+    Fancybox.bind("[data-fancybox='gallery']", {
+      Thumbs: {
+        autoStart: true,
+      },
+      Toolbar: {
+        display: ["close"],
+      },
+    });
+  </script>
+</body>
+</html>
