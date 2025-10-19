@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// FAQ Accordion Toggle
 document.addEventListener('DOMContentLoaded', () => {
   const faqButtons = document.querySelectorAll('.faq-question');
 
