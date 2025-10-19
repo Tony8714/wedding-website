@@ -31,9 +31,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=The+Nautigal:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  
-  <!-- Custom JS -->
-  <script src="script.js" defer></script>
 
 </head>
 <body 
@@ -42,21 +39,25 @@
 >
   <!-- Navigation -->
   <nav class="fixed w-full bg-white shadow-sm z-20">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-6xl mx-auto px-4 relative">
       <div class="flex justify-between items-center py-1">
-        <!-- Hamburger Button (hidden on desktop) -->
-        <button 
-          id="menu-btn" 
-          class="block md:hidden focus:outline-none ml-auto"
-        >
-          <!-- icon -->
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" 
-               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" 
-                  d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-  
+        <!-- Hamburger Button -->
+        <button id="menu-btn" class="block md:hidden focus:outline-none ml-auto z-30 relative">
+        <!-- Hamburger Icon -->
+        <svg id="icon-hamburger" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+
+        <!-- Close Icon -->
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
         <!-- Desktop Menu -->
         <ul class="hidden md:flex space-x-6 ml-auto">
           <li><a href="#invitation" class="hover:text-amber-700">Invitation</a></li>
@@ -64,23 +65,23 @@
           <li><a href="#entourage" class="hover:text-amber-700">Entourage</a></li>
           <li><a href="gallery.html" class="hover:text-amber-700">Gallery</a></li>
           <li><a href="#rsvp" class="hover:text-amber-700">RSVP</a></li>
-          <li><a href="#notes" class="hover:text-amber-700">Notes</a></li>
+          <li><a href="#faq" class="hover:text-amber-700">FAQ</a></li>
         </ul>
       </div>
-  
-      <!-- Mobile Menu (hidden by default) -->
-      <ul id="menu" class="hidden flex-col items-end text-right space-y-4 pb-4 md:hidden bg-cover bg-center text-black"
-          style="background-color: #ffffff;">
-        <li><a href="#invitation" class="block hover:text-amber-700">Invitation</a></li>
-        <li><a href="#save-the-date" class="block hover:text-amber-700">Date & Venue</a></li>
-        <li><a href="#entourage" class="block hover:text-amber-700">Entourage</a></li>
-        <li><a href="gallery.html" class="block hover:text-amber-700">Gallery</a></li>
-        <li><a href="#rsvp" class="block hover:text-amber-700">RSVP</a></li>
-        <li><a href="#notes" class="block hover:text-amber-700">Notes</a></li>
-      </ul>
+
+      <!-- Mobile Menu Overlay -->
+      <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden">
+        <ul id="menu" class="h-full w-2/5 ml-auto flex flex-col items-start text-left space-y-8 bg-white p-8">
+          <li><a href="#invitation" class="block hover:text-amber-700">Invitation</a></li>
+          <li><a href="#save-the-date" class="block hover:text-amber-700">Date & Venue</a></li>
+          <li><a href="#entourage" class="block hover:text-amber-700">Entourage</a></li>
+          <li><a href="gallery.html" class="block hover:text-amber-700">Gallery</a></li>
+          <li><a href="#rsvp" class="block hover:text-amber-700">RSVP</a></li>
+          <li><a href="#faq" class="block hover:text-amber-700">FAQ</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
-  
 
   <!-- Logo Header -->
   <section id="home" class="text-center py-12 px-4">
@@ -105,7 +106,7 @@
       </p>
 
       <!-- Scripted Title -->
-      <h2 class="text-6xl sm:text-6xl mb-14" style="font-family: 'Palace Script MT', cursive; color: #6a6146;">
+      <h2 class="text-5xl sm:text-5xl mb-14" style="font-family: 'Corinthia', cursive; color: #6a6146;">
         our wedding
       </h2>
 
@@ -116,13 +117,16 @@
 
       <!-- Body Text -->
       <p class="text-base sm:text-lg font-serif leading-relaxed mb-10" style="font-family: 'Playfair Display', serif; color: #6a6146;">
-        After 10 years together.<br>
-        we’ve decided to tie the knot<br>
-        and would be delighted to have you join us as we say
+        After 10 beautiful years together,<br>
+        we promised forever to each other.<br>
+        <br>
+        Now, in our 11th year,<br>
+        we’re turning that promise into reality.<br>
+        We would be delighted to have you witness as we say
       </p>
 
       <!-- 'I do' Highlight -->
-      <h3 class="text-7xl sm:text-7xl italic mb-10" style="font-family: 'Palace Script MT', cursive; color: #6a6146;">
+      <h3 class="text-7xl sm:text-7xl italic mb-10" style="font-family: 'Corinthia', cursive; color: #6a6146;">
         "I do".
       </h3>
     </div>
@@ -415,22 +419,29 @@
     </div>
   </section>
 
-  <!-- Notes / FAQ -->
-  <section id="notes" class="py-16 px-6 bg-gray-100">
-    <h2 class="text-3xl font-semibold text-center mb-6">Notes</h2>
-    <div class="max-w-3xl mx-auto text-left space-y-4">
-      <div>
-        <h3 class="font-semibold">Dress Guide</h3>
-        <p>TBA</p>
+  <!-- FAQ -->
+  <section id="faq" class="faq-section">
+    <div class="faq-header">
+      <img src="images/faq.png" alt="FAQ"  class="faq-title-image" />
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">WHAT IS THE DRESS CODE? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">The dress code for our wedding is semi-formal in brown neutrals.</div>
       </div>
-      <div>
-        <h3 class="font-semibold">Gifts</h3>
-        <p>TBA</p>
+      <div class="faq-item">
+        <button class="faq-question">WHAT IS THE DRESS CODE? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">The dress code for our wedding is semi-formal in brown neutrals.</div>
       </div>
-      <div>
-        <h3 class="font-semibold">FAQs</h3>
-        <p>TBA</p>
+      <div class="faq-item">
+        <button class="faq-question">WHAT IS THE DRESS CODE? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">The dress code for our wedding is semi-formal in brown neutrals.</div>
       </div>
+      <div class="faq-item">
+        <button class="faq-question">WHAT IS THE DRESS CODE? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">The dress code for our wedding is semi-formal in brown neutrals.</div>
+      </div>
+      <!-- Add more items as needed -->
     </div>
   </section>
 
@@ -476,5 +487,6 @@
       },
     });
   </script>
+  <script src="script.js"></script>
 </body>
 </html>

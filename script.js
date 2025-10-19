@@ -1,21 +1,3 @@
-// --- Mobile hamburger menu ---
-const menuBtn = document.getElementById('menu-btn');
-const menu = document.getElementById('menu');
-
-if (menuBtn && menu) {
-  menuBtn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-
-  // Close the menu when any link inside is clicked
-  const menuLinks = menu.querySelectorAll('a');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-    });
-  });
-}
-
 // --- Countdown Timer ---
 const weddingDate = new Date('December 10, 2025 14:00:00').getTime();
 
@@ -80,37 +62,66 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Mobile Navigation Menu Toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('menu-btn');
+  const menuOverlay = document.getElementById('menu-overlay');
+  const menu = document.getElementById('menu');
+  const iconHamburger = document.getElementById('icon-hamburger');
+  const iconClose = document.getElementById('icon-close');
 
-document.addEventListener("DOMContentLoaded", () => {
-  const marquee = document.getElementById("marqueeContent");
-  let scrollAmount = 0;
-
-  function scrollGallery() {
-    scrollAmount -= 1;
-    marquee.style.transform = `translateX(${scrollAmount}px)`;
-
-    // Reset scroll when it reaches halfway
-    if (Math.abs(scrollAmount) >= marquee.scrollWidth / 2) {
-      scrollAmount = 0;
-    }
-
-    requestAnimationFrame(scrollGallery);
+  if (!menuBtn || !menuOverlay || !menu || !iconHamburger || !iconClose) {
+    console.warn("Missing navigation elements. Check your HTML IDs.");
+    return;
   }
 
-  scrollGallery();
-});
+  const menuLinks = menu.querySelectorAll('a');
 
+  menuBtn.addEventListener('click', () => {
+    const isHidden = menuOverlay.classList.contains('hidden');
 
-const images = document.querySelectorAll("#marqueeContent img");
-
-images.forEach(img => {
-  img.addEventListener("mouseenter", () => {
-    img.style.transform = "scale(1.05)";
-    img.style.transition = "transform 0.3s ease";
+    if (isHidden) {
+      menuOverlay.classList.remove('hidden');
+      menu.classList.remove('hidden');
+      iconHamburger.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    } else {
+      menuOverlay.classList.add('hidden');
+      menu.classList.add('hidden');
+      iconHamburger.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    }
   });
 
-  img.addEventListener("mouseleave", () => {
-    img.style.transform = "scale(1)";
+  menuOverlay.addEventListener('click', (e) => {
+    if (e.target === menuOverlay) {
+      menuOverlay.classList.add('hidden');
+      menu.classList.add('hidden');
+      iconHamburger.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    }
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuOverlay.classList.add('hidden');
+      menu.classList.add('hidden');
+      iconHamburger.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
   });
 });
-  
+
+document.addEventListener('DOMContentLoaded', () => {
+  const faqButtons = document.querySelectorAll('.faq-question');
+
+  faqButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      const icon = button.querySelector('.toggle-icon');
+
+      item.classList.toggle('active');
+      icon.textContent = item.classList.contains('active') ? '−' : '+';
+    });
+  });
+});
