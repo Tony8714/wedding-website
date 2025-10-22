@@ -177,12 +177,13 @@
   display: block;
 }
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
   .faq-title-image {
-    max-width: 70%;
+    width: 350px;
+    max-width: 100%;
     margin-bottom: 1.5rem;
   }
-} */
+}
 
 @media (max-width: 600px) {
   .faq-section {

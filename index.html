@@ -60,9 +60,10 @@
 
         <!-- Desktop Menu -->
         <ul class="hidden md:flex space-x-6 ml-auto">
-          <li><a href="#invitation" class="hover:text-amber-700">Invitation</a></li>
+          <li><a href="#home" class="hover:text-amber-700">Home</a></li>
           <li><a href="#save-the-date" class="hover:text-amber-700">Date & Venue</a></li>
           <li><a href="#entourage" class="hover:text-amber-700">Entourage</a></li>
+          <li><a href="#attire" class="block hover:text-amber-700">Attire Guide</a></li>
           <li><a href="gallery.html" class="hover:text-amber-700">Gallery</a></li>
           <li><a href="#rsvp" class="hover:text-amber-700">RSVP</a></li>
           <li><a href="#faq" class="hover:text-amber-700">FAQ</a></li>
@@ -72,9 +73,10 @@
       <!-- Mobile Menu Overlay -->
       <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden">
         <ul id="menu" class="h-full w-2/5 ml-auto flex flex-col items-start text-left space-y-8 bg-white p-8">
-          <li><a href="#invitation" class="block hover:text-amber-700">Invitation</a></li>
+          <li><a href="#home" class="block hover:text-amber-700">Home</a></li>
           <li><a href="#save-the-date" class="block hover:text-amber-700">Date & Venue</a></li>
           <li><a href="#entourage" class="block hover:text-amber-700">Entourage</a></li>
+          <li><a href="#attire" class="block hover:text-amber-700">Attire Guide</a></li>
           <li><a href="gallery.html" class="block hover:text-amber-700">Gallery</a></li>
           <li><a href="#rsvp" class="block hover:text-amber-700">RSVP</a></li>
           <li><a href="#faq" class="block hover:text-amber-700">FAQ</a></li>
@@ -117,10 +119,10 @@
 
       <!-- Body Text -->
       <p class="text-base sm:text-lg font-serif leading-relaxed mb-10" style="font-family: 'Playfair Display', serif; color: #6a6146;">
-        After 10 beautiful years together,<br>
+        After ten beautiful years together,<br>
         we promised forever to each other.<br>
         <br>
-        Now, in our 11th year,<br>
+        Now, in our eleventh year,<br>
         we’re turning that promise into reality.<br>
         We would be delighted to have you witness as we say
       </p>
@@ -189,12 +191,12 @@
 
   <section 
     id="venue" 
-    class="py-20 px-6 flex flex-col justify-center items-center bg-gradient-to-b from-white to-brown-50"
+    class="py-15 px-6 flex flex-col justify-center items-center bg-gradient-to-b bg-white mt-10"
   >
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
       <!-- Ceremony Card -->
-      <div class="bg-white rounded-2xl shadow-lg text-center py-10 px-6 backdrop-blur-sm bg-opacity-95">
-        <img src="images/ring.jpg" alt="rings" class="mx-auto mb-2 w-20 h-20" />
+      <div class="rounded-2xl shadow-lg text-center py-10 px-6 backdrop-blur-sm bg-opacity-95" style="background-color: #dcd4cc;">
+        <img src="images/ring.png" alt="rings" class="mx-auto mb-2 w-25 h-20" />
         <h3 
           class="text-5xl italic mb-6" 
           style="font-family: 'Brush Script MT', cursive; color: #4B2E2E;"
@@ -209,8 +211,8 @@
       </div>
 
       <!-- Reception Card -->
-      <div class="bg-white rounded-2xl shadow-lg text-center py-10 px-6 backdrop-blur-sm bg-opacity-95">
-        <img src="images/party.jpg" alt="glasses" class="mx-auto mb-2 w-20 h-20" />
+      <div class="rounded-2xl shadow-lg text-center py-10 px-6 backdrop-blur-sm bg-opacity-95" style="background-color: #dcd4cc;">
+        <img src="images/glass.png" alt="glasses" class="mx-auto mb-2 w-25 h-20" />
         <h3 
           class="text-5xl italic mb-6" 
           style="font-family: 'Brush Script MT', cursive; color: #4B2E2E;"
@@ -226,6 +228,14 @@
         <p class="text-lg text-gray-700 mb-6">5:30 PM</p>
       </div>
     </div>
+    <div class="flex justify-center items-center py-10">
+      <a href="#rsvp">
+        <img 
+          src="images/rsvpButton.jpg" 
+          alt="RSVP Button" 
+          class="w-52 h-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300"/>
+      </a>
+    </div>
   </section>
 
   <!-- Entourage Section -->
@@ -240,13 +250,13 @@
 
       <!-- Parents -->
       <div class="mt-6">
-        <div class="flex flex-col md:flex-row justify-between text-sm md:text-base">
-          <div>
+        <div class="grid grid-cols-2 gap-x-3 text-xs">
+          <div class="text-right pr-2">
             <p class="font-bold uppercase">Parents of the Groom</p>
             <p>Engr. Alejandro Malait</p>
             <p>Mrs. Rosario Malait</p>
           </div>
-          <div class="mt-4 md:mt-0">
+          <div class="text-left pl-2">
             <p class="font-bold uppercase">Parents of the Bride</p>
             <p>Engr. Roy Rubio</p>
             <p>Mrs. Evelyn Rubio</p>
@@ -254,58 +264,55 @@
         </div>
       </div>
 
-      <!-- Primary Sponsors -->
+      <!-- Principal Sponsors -->
     <div class="mt-8">
-      <p class="font-bold uppercase">Primary Sponsors</p>
-      <p class="italic font-semibold">To Stand as Witnesses to our Vows</p>
+      <p class="font-bold uppercase mb-2">Principal Sponsors</p>
+      <p class="italic font-semibold text-sm mb-2">To Stand as Witnesses to our Vows</p>
 
-      <div class="grid grid-cols-2 text-sm mt-4 gap-y-1">
-        <p>Engr. Arthur Malait</p>
-        <p>Mrs. Rosemarie Malait</p>
-
-        <p>Engr. Al Vincent Malait</p>
-        <p>Mrs. Famela Malait</p>
-
-        <p>Capt. Romeo Dignos</p>
-        <p>Mrs. Uelsita Dignos</p>
-
-        <p>Mr. Jun Anthony Tutor</p>
-        <p>Atty. Beverly Tutor</p>
-
-        <p>Mr. Neil Roque Guzman</p>
-        <p>Mrs. Maria Deeza Guzman</p>
-
-        <p>Mr. Dennis Delgado</p>
-        <p>Mrs. Carmelita Delgado</p>
-
-        <p>Mr. Teofilo Geagonia</p>
-        <p>Mrs. Ronita Geagonia</p>
-
-        <p>Engr. Reginaldo Guzman</p>
-        <p>Mrs. Leigh Guzman</p>
+      <div class="grid grid-cols-2 gap-x-3 gap-y-2 text-xs">
+        <div class="text-right pr-2">
+          <p>Engr. Arthur Malait</p>
+          <p>Engr. Al Vincent Malait</p>
+          <p>Capt. Romeo Dignos</p>
+          <p>Mr. Jun Anthony Tutor</p>
+          <p>Mr. Neil Roque Guzman</p>
+          <p>Mr. Dennis Delgado</p>
+          <p>Mr. Teofilo Geagonia</p>
+          <p>Engr. Reginaldo Guzman</p>
+        </div>
+        <div class="text-left pl-2">
+          <p>Mrs. Rosemarie Malait</p>
+          <p>Mrs. Famela Malait</p>
+          <p>Mrs. Uelsita Dignos</p>
+          <p>Atty. Beverly Tutor</p>
+          <p>Mrs. Maria Deeza Guzman</p>
+          <p>Mrs. Carmelita Delgado</p>
+          <p>Mrs. Ronita Geagonia</p>
+          <p>Mrs. Leigh Guzman</p>
+        </div>
       </div>
 
       <!-- Floral Divider -->
-      <div class="my-6">
+      <div class="mt-6 mb-4">
         <img src="images/divider.png" alt="divider" class="mx-auto w-50 opacity-70" />
       </div>
 
       <!-- Best Man / Maid of Honor -->
       <div>
-        <p class="italic font-semibold">To Assist us in our Needs</p>
-        <div class="grid grid-cols-2 text-sm mt-2">
-          <div>
+        <p class="italic font-semibold text-sm">To Assist us in our Needs</p>
+        <div class="grid grid-cols-2 gap-x-3 text-xs mt-2">
+          <div class="text-right pr-2">
             <p class="font-bold uppercase">Best Man</p>
             <p>Engr. Aris Vincent Carillo</p>
           </div>
-          <div>
+          <div class="text-left pl-2">
             <p class="font-bold uppercase">Matron of Honor</p>
             <p>Mrs. Karen Rubio-Sanchez</p>
           </div>
         </div>
 
         <!-- Centered Bible Bearer -->
-        <div class="mt-4 text-center">
+        <div class="mt-4 text-center text-xs">
           <p class="font-bold uppercase">Maid of Honor</p>
           <p>Ms. Mica Joy Pasinabo</p>
         </div>
@@ -313,22 +320,22 @@
 
       <!-- Groomsmen / Bridesmaids -->
       <div class="mt-6">
-        <p class="italic font-semibold">To Guide us in our Way</p>
-        <div class="grid grid-cols-2 text-sm mt-2">
-          <p class="font-bold uppercase">Groomsmen</p>
-          <p class="font-bold uppercase">Bridesmaids</p>
-
-          <p>Engr. Rhail Joshua Beceril</p>
-          <p>Ms. Lydessa Payusan</p>
-
-          <p>Mr. Kevin Godinez</p>
-          <p>Ms. Micah Dimpas</p>
-
-          <p>Mr. Fritz Gerald Belo</p>
-          <p>Ms. Arabelle Escuadro</p>
-
-          <p>Mr. Christian Joseph Obaob</p>
-          <p>Ms. Mary Antionette Cababat</p>
+        <p class="italic font-semibold text-sm">To Guide us in our Way</p>
+        <div class="grid grid-cols-2 gap-x-3 text-xs mt-2">
+          <div class="text-right pr-2">
+            <p class="font-bold uppercase">Groomsmen</p>
+            <p>Engr. Rhail Joshua Beceril</p>
+            <p>Mr. Kevin Godinez</p>
+            <p>Mr. Fritz Gerald Belo</p>
+            <p>Mr. Christian Joseph Obaob</p>
+          </div>
+          <div class="text-left pl-2">
+            <p class="font-bold uppercase">Bridesmaids</p>
+            <p>Ms. Lydessa Payusan</p>
+            <p>Ms. Micah Dimpas</p>
+            <p>Ms. Arabelle Escuadro</p>
+            <p>Ms. Mary Antionette Cababat</p>
+          </div>
         </div>
       </div>
 
@@ -336,29 +343,29 @@
       <div class="mt-6">
         <p class="font-bold uppercase">Secondary Sponsors</p>
 
-        <div class="grid grid-cols-2 text-sm mt-2">
-          <div>
-            <p class="italic font-semibold">To Light our Path</p>
+        <div class="grid grid-cols-2 gap-x-3 text-xs mt-2">
+          <div class="text-right pr-2">
+            <p class="italic font-semibold text-sm">To Light our Path</p>
             <p>Mr. Ian Michael Rubio</p>
             <p>Ms. Alyssa Marie Pantojan</p>
           </div>
-          <div>
-            <p class="italic font-semibold">To Clothe us as One</p>
+          <div class="text-left pl-2">
+            <p class="italic font-semibold text-sm">To Clothe us as One</p>
             <p>Mr. Cris Noel Ortizano</p>
             <p>Mrs. Charmaine Harlee Ortizano</p>
           </div>
         </div>
 
         <!-- Centered Text -->
-        <div class="mt-4 text-center">
-          <p class="italic font-semibold">To Bind us Together in Unity</p>
+        <div class="mt-4 text-center text-xs">
+          <p class="italic font-semibold text-sm">To Bind us Together in Unity</p>
           <p>Engr. Jeremy Dave Sanchez</p>
           <p>Mrs. Karen Rubio-Sanchez</p>
         </div>
       </div>
 
       <!-- Floral Divider -->
-      <div class="my-6">
+      <div class="mt-6 mb-4">
         <img src="images/divider.png" alt="divider" class="mx-auto w-50 opacity-70" />
       </div>
 
@@ -366,7 +373,7 @@
       <div class="mt-6 text-sm">
         <p class="italic font-semibold">To Carry our Symbol of Love, Treasure and Faith</p>
 
-        <div class="grid grid-cols-2 mt-4">
+        <div class="grid grid-cols-2 mt-4 text-xs">
           <div>
             <p class="font-bold uppercase">Ring Bearer</p>
             <p>Gian Miguel Malait</p>
@@ -378,35 +385,65 @@
         </div>
 
         <!-- Centered Bible Bearer -->
-        <div class="mt-4 text-center">
+        <div class="mt-4 text-center text-xs">
           <p class="font-bold uppercase">Bible Bearer</p>
           <p>Courvine Daile Malait</p>
         </div>
 
-        <p class="italic font-semibold mt-6">To Shower our Aisle with Flowers</p>
-        <p>Julia Khaleesi Sanchez</p>
-        <p>Catrinette Daere Malait</p>
-        <p>Alessandra Vienne Malait</p>
-        <p>Laice Vittoria Malait</p>
-        <p>Caleigh Dawnelle Malait</p>
+        <p class="italic font-semibold mt-6 text-sm">To Shower our Aisle with Flowers</p>
+        <p class="text-xs">Julia Khaleesi Sanchez</p>
+        <p class="text-xs">Catrinette Daere Malait</p>
+        <p class="text-xs">Alessandra Vienne Malait</p>
+        <p class="text-xs">Laice Vittoria Malait</p>
+        <p class="text-xs">Caleigh Dawnelle Malait</p>
       </div>
+
+      <!-- Floral Divider -->
+      <div class="mt-6 mb-4">
+        <img src="images/divider.png" alt="divider" class="mx-auto w-50 opacity-70" />
+      </div>
+
+      <!-- Offertory Sponsors -->
+      <div class="mt-6">
+        <p class="font-bold uppercase">Offertory Sponsors</p>
+
+        <div class="grid grid-cols-2 gap-x-3 text-xs mt-4">
+          <div class="text-right pr-2">
+            <p class="italic font-semibold text-sm">Bread</p>
+            <p>Ms. Liziel Sheen Estinor</p>
+            <p>Ms. Jace Piner</p>
+          </div>
+          <div class="text-left pl-2">
+            <p class="italic font-semibold text-sm">Wine</p>
+            <p>Ms. Kristel Marie Cabusas</p>
+            <p>Ms. Mary Jane Geonzon</p>
+          </div>
+        </div>
+
+        <!-- Centered Bible Bearer -->
+        <div class="mt-4 text-center text-xs">
+          <p class="italic font-semibold text-sm">Fruits</p>
+          <p>Dr. Lourie Sheen Yucot</p>
+          <p>Ms. Flora Mae Mala-ay</p>
+        </div>
+
     </div>
   </section>
 
-    <!-- Gallery Marquee with Hover Effects and Lightbox -->
-    <section id="gallery" class="py-20 px-6 bg-[#f8f6f3]">
-      <div class="max-w-6xl mx-auto text-center">
-        
-      </div>
-    </section>
+  <!-- Attire Guide -->
+  <section id="attire" class="text-center py-4 px-4">
+    <div class="max-w-md mx-auto">
+      <img src="images/attireGuide.JPEG" alt="Attire Guide" style="width:100%; height:600px;" class="mx-auto my-8" />
+    </div>
+  </section>
 
   <!-- RSVP -->
   <section id="rsvp" class="py-20 px-6 text-center" style="background-color: #dcd4cc;">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl sm:text-5xl font-semibold mb-8 text-gray-800" style="font-family: 'Playfair Display', serif;">
+      <h2 class="text-5xl sm:text-5xl font-semibold mb-8 text-gray-800" style="font-family: 'Allura', cursive;">
         Be Our Guest
       </h2>
-      <p class="text-base sm:text-lg mb-6 text-gray-700">
+      <p class="text-base sm:text-lg mb-6 text-gray-700" style="font-family: 'Playfair Display', serif;">
         Let us know if you can join us on our big day.<br>
         Please respond on or before November 15.
       </p>
@@ -426,20 +463,79 @@
     </div>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question">WHAT IS THE DRESS CODE? <span class="toggle-icon">+</span></button>
-        <div class="faq-answer">The dress code for our wedding is semi-formal in brown neutrals.</div>
+        <button class="faq-question">What time should I arrive? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">The ceremony will strictly start at 2:00 PM, and the entourage march will begin at 1:30 PM. 
+          We kindly ask that you arrive at the church and be seated on or before 1:30 PM.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">WHAT IS THE DRESS CODE? <span class="toggle-icon">+</span></button>
-        <div class="faq-answer">The dress code for our wedding is semi-formal in brown neutrals.</div>
+        <button class="faq-question">Can we take photos or videos during the ceremony? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">Absolutely! We only ask that you kindly be mindful not to block our photographers and videographers so they can capture every moment beautifully. 
+          Most importantly, please keep the aisle clear during the bridal entrance.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">WHAT IS THE DRESS CODE? <span class="toggle-icon">+</span></button>
-        <div class="faq-answer">The dress code for our wedding is semi-formal in brown neutrals.</div>
+        <button class="faq-question">Will transportation be provided? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">Our reception is conveniently just beside the church, within walking distance. 
+          Guests are kindly requested to arrange their own transportation to the church and back home after the reception.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-question">WHAT IS THE DRESS CODE? <span class="toggle-icon">+</span></button>
-        <div class="faq-answer">The dress code for our wedding is semi-formal in brown neutrals.</div>
+        <button class="faq-question">Will there be parking space? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">Yes! Free parking is available at the church, while parking at the reception area is ₱30.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is RSVP required? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">Yes, please. We need to provide our venue with the final guest count by a certain date, 
+          so kindly don’t skip your RSVP. It really helps us plan smoothly.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What if I didn’t RSVP, can I still go? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">Please check with us first. Unfortunately, we have a strict guest list. 
+          Kindly inform us if your schedule clears up, and we’ll do our best to accommodate you. 
+          Should some seats free up, we’ll let you know right away. Please avoid coming unannounced, as we might not have an available seat.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What if I RSVPed but can’t make it? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">We would truly love to have you with us, but we understand that some things are beyond our control. 
+          Please let us know as soon as possible so we can reallocate your seats to someone else.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can we bring our kids to the wedding? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">We truly adore your little ones, but due to necessity rather than choice, we’re unable to accommodate children at the venue. 
+          The only kids attending are those who are part of the entourage or personally requested. We sincerely hope for your kind understanding.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can we bring a plus one? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">As much as we would love to welcome everyone, our seating capacity is limited and carefully planned within our means. 
+          Each seat has been thoughtfully assigned by name for our confirmed guests. We truly appreciate your kind understanding.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">If you reserved us two seats and only one can make it, can I bring someone else along with me? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">Unfortunately, no. Unless we have personally confirmed it with you. While we’d truly love to celebrate with everyone, we’ve chosen to keep our guest list intimate, 
+          surrounded by our closest family and friends who have been part of our journey. We hope for your kind understanding.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you have any gift preferences? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">Your presence is truly the greatest gift we could ever ask for. However, if you wish to share your love in another way, 
+          a monetary gift would be deeply appreciated as we begin building our life, dreams and future together.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I sit wherever I want at the reception? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">There will be a seating plan at the reception. Don’t worry, 
+          we’ve arranged it thoughtfully so you’ll be surrounded by good vibes and even better company.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">When is the appropriate time to leave? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">This is such a special day for us, one we’ve been preparing for a long time. 
+          We’d love for you to celebrate with us from the ceremony until the end of the program. 
+          We aim to wrap up the celebration around 9:30 PM, so please stay, dance, and enjoy the night with us!</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How can I help the couple have a great time during their wedding? <span class="toggle-icon">+</span></button>
+        <div class="faq-answer">• Pray with us <br>
+          • RSVP early <br>
+          • Wear proper attire <br>
+          • Be on time <br>
+          • Stay until the end of the program <br>
+          • Join in the fun and enjoy! 💕</div>
       </div>
       <!-- Add more items as needed -->
     </div>
@@ -451,7 +547,7 @@
   </footer>
 
   <audio id="bgMusic" loop>
-    <source src="music/Tenerife Sea - Piano Cover.m4a" type="audio/mp4">
+    <source src="music/i_get_to_love_u.mp3" type="audio/mp4">
     Your browser does not support the audio element.
   </audio>
 
