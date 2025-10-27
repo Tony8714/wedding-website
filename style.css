@@ -177,11 +177,42 @@
   display: block;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .faq-title-image {
     width: 350px;
     max-width: 100%;
     margin-bottom: 1.5rem;
+  }
+  #home {
+    background-position: center 40%;
+    background-size: contain;
+  }
+  #gifts {
+    background-position: 37% center; /* Adjust this value as needed */
+  }
+
+  #gift-message {
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    padding-top: 5rem;       /* Add spacing from top */
+    height: 100vh;
+  }
+
+  #gift-message > div {
+    text-align: center;
+    opacity: 80%;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  #gift-message > div h2 {
+    font-size: 2rem; /* Adjust heading size */
+    margin-bottom: 1.5rem;
+  }
+
+  #gift-message > div p {
+    font-size: 1.2rem; /* Adjust paragraph size */
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -205,5 +236,15 @@
    .faq-title-image {
     max-width: 70%;
     margin-bottom: 1.5rem;
+  }
+
+  .toggle-icon {
+    font-size: 1.2rem;         /* Adjust size for visibility */
+    width: 1.5rem;              /* Fixed width to prevent stretching */
+    height: 1.5rem;             /* Fixed height to match width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;    
   }
 }
