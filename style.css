@@ -249,7 +249,7 @@
   }
 }
 
-@media (max-width: 768px) and (max-height: 250px) {
+@media (max-width: 900px) and (max-height: 400px) {
   #gift-message {
     justify-content: flex-end;
     align-items: flex-start;
@@ -263,7 +263,7 @@
     width: 240px;
     padding: 0.75rem;
     text-align: center;
-    margin-right: 1.0rem;
+    margin-right: 3.0rem;
   }
 
   #gift-message img {
