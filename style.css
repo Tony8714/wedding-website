@@ -206,13 +206,13 @@
   }
 
   #gift-message > div h2 {
-    font-size: 2rem; /* Adjust heading size */
-    margin-bottom: 1.5rem;
+    font-size: 2.0rem; /* Adjust heading size */
+    margin-bottom: 1.0rem;
   }
 
   #gift-message > div p {
-    font-size: 1.2rem; /* Adjust paragraph size */
-    margin-bottom: 0.5rem;
+    font-size: 1.0rem; /* Adjust paragraph size */
+    margin-bottom: 0.2rem;
   }
 }
 
