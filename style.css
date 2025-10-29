@@ -249,39 +249,35 @@
   }
 }
 
-@media (max-width: 768px) and (max-height: 480px) {
-  #gifts {
-    background-position: center center;
-    background-size: cover;
-  }
-
+@media (max-width: 900px) and (max-height: 400px) {
   #gift-message {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 3rem;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 2rem;
+    padding-right: 1rem;
     height: auto;
+    min-height: 70vh;
   }
 
   #gift-message > div {
-    width: 90%;
-    max-width: 300px;
-    padding: 1rem;
-  }
-
-  #gift-message > div h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-  }
-
-  #gift-message > div p {
-    font-size: 0.95rem;
-    margin-bottom: 0.2rem;
+    width: 240px;
+    padding: 0.75rem;
+    text-align: center;
   }
 
   #gift-message img {
-    width: 5rem;
-    height: 5rem;
-    margin-bottom: 1rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  #gift-message h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  #gift-message p {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
   }
 }
