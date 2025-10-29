@@ -249,36 +249,41 @@
   }
 }
 
-@media (max-width: 1080px) and (max-height: 400px) {
+@media (max-width: 950px) and (max-height: 400px) {
+  #gifts {
+    background-position: center center;   /* Center the image horizontally and vertically */
+    background-size: cover;               /* Ensure full coverage without distortion */
+  }
+  
   #gift-message {
     justify-content: flex-end;
     align-items: flex-start;
-    padding-top: 2rem;
-    padding-right: 1rem;
+    padding-top: 1.5rem;
+    padding-right: 0.5rem;
     height: auto;
-    min-height: 70vh;
+    min-height: 65vh;
   }
 
   #gift-message > div {
-    width: 240px;
-    padding: 0.75rem;
-    text-align: center;
+    width: 220px;
+    padding: 0.5rem;
     margin-right: 3.0rem;
+    text-align: center;
   }
 
   #gift-message img {
-    width: 3.5rem;
-    height: 3.5rem;
-    margin-bottom: 0.75rem;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
   }
 
   #gift-message h2 {
-    font-size: 1.4rem;
-    margin-bottom: 0.6rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
   #gift-message p {
-    font-size: 0.8rem;
-    margin-bottom: 0.2rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.15rem;
   }
 }
