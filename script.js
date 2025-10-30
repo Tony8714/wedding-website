@@ -132,6 +132,8 @@ window.addEventListener('load', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-window.addEventListener('beforeunload', () => {
-  sessionStorage.setItem('scrollToTop', 'true');
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 0);
 });

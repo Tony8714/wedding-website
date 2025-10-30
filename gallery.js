@@ -89,6 +89,8 @@ window.addEventListener('beforeunload', () => {
   window.scrollTo(0, 0);
 });
 
-window.addEventListener('beforeunload', () => {
-  sessionStorage.setItem('scrollToTop', 'true');
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 0);
 });
