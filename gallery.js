@@ -83,3 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Scroll to Top on Page Load
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});

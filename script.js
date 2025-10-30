@@ -126,3 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Smooth Scroll to Top on Page Load
+window.addEventListener('load', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
