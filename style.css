@@ -225,10 +225,12 @@
 
   .faq-question {
     font-size: 0.9rem;
+    font-family: 'Gantari', serif;
   }
 
   .faq-answer {
     font-size: 0.85rem;
+    font-family: 'Assistant', serif;
   }
 
   .faq-item {
