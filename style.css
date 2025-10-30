@@ -144,6 +144,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Gantari', serif;
   color: #3e2f1c;
 }
 
@@ -164,6 +165,7 @@
   font-size: 0.8rem;
   color: #5a4632;
   display: none;
+  font-family: 'Assistant', serif;
 }
 
 .faq-item.active .faq-answer {
