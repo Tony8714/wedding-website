@@ -126,14 +126,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
-// Smooth Scroll to Top on Page Load
-window.addEventListener('load', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 0);
-});

@@ -83,14 +83,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-// Scroll to Top on Page Load
-window.addEventListener('beforeunload', () => {
-  window.scrollTo(0, 0);
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 0);
-});
