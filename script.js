@@ -6,7 +6,7 @@ function updateCountdown() {
   const diff = weddingDate - now;
 
   if (diff <= 0) {
-    document.getElementById('countdown-section').innerHTML = '<div class="text-3xl font-bold text-pink-700">Happily Married! 🎉</div>';
+    document.getElementById('countdown-section').innerHTML = '<div class="text-5xl font-bold text-[#4B2E2E] text-center" style="font-family: \'Sacramento\', cursive;">Happily Married! 🎉</div>';
     return;
   }
 
